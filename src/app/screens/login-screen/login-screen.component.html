@@ -1,0 +1,53 @@
+<div class="app">
+  <header class="site-header">
+    <h1 class="brand">
+      <strong>CARRERA</strong>
+      <span class="sep">|</span>
+      <strong>DUCATI</strong>
+    </h1>
+  </header>
+
+  <section class="promocion" aria-label="promoción">
+    <div class="promo-inner">
+      <img class="promo-img" src="assets/images/login-img@2x.png" alt="Gafas Carrera"/>
+    </div>
+  </section>
+
+  <section class="login" aria-label="inicio de sesión">
+    <h2 class="login-title">INICIO DE SESIÓN</h2>
+
+    <form class="login-form" (ngSubmit)="onSubmit()" #f="ngForm" novalidate>
+      <mat-form-field appearance="outline" class="field">
+        <mat-label>Correo electrónico</mat-label>
+        <input matInput type="email" name="email" ngModel required autocomplete="email" placeholder="Correo electrónico" />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="field">
+        <mat-label>Contraseña</mat-label>
+        <input matInput [type]="hide ? 'password' : 'text'" name="password" ngModel required autocomplete="current-password" placeholder="Contraseña" />
+        <button mat-icon-button type="button" matSuffix (click)="hide = !hide" [attr.aria-label]="'Mostrar/ocultar contraseña'">
+          <mat-icon>{{ hide ? 'visibility' : 'visibility_off' }}</mat-icon>
+        </button>
+      </mat-form-field>
+
+      <div class="forgot">
+        <a class="link-reset" href="#" (click)="$event.preventDefault()">Recupera tu contraseña</a>
+      </div>
+
+      <button class="btn-primary" mat-raised-button color="primary" type="submit">INGRESAR</button>
+    </form>
+
+    <hr class="divider"/>
+
+    <p class="signup">
+      ¿Aún no tienes una cuenta?
+      <a class="link-signup" routerLink="/registro-usuarios">Regístrate</a>
+    </p>
+
+    <section class="liston" aria-label="liston">
+      <div class="liston-inner">
+        <img class="liston-img" src="assets/images/liston-img@2x.png" alt="liston" />
+      </div>
+    </section>
+  </section>
+</div>
